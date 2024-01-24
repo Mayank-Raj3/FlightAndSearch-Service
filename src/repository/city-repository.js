@@ -1,18 +1,19 @@
 // we need to have the acess of the modal
 
-const city = require("../models/city");
 const { City } = require("../models/index");
 
 class CityRepositoty {
   async createCity({ name }) {
     try {
-      const city = await City.create({ name });
+      const city = await City.create({
+        name,
+      });
       return city;
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log("Something went wrong");
+      throw { error };
     }
   }
-
   async deleteCity(cityId) {
     try {
       await City.destroy({
@@ -20,8 +21,32 @@ class CityRepositoty {
           id: cityId,
         },
       });
-    } catch (err) {
-      console.log(err);
+      return true;
+    } catch (error) {
+      console.log("Something went wrong");
+      throw { error };
+    }
+  }
+  async updateCity(cityId, data) {
+    try {
+      const city = await City.update(data, {
+        where: {
+          id: cityId,
+        },
+      });
+      return city;
+    } catch (error) {
+      console.log("Something went wrong");
+      throw { error };
+    }
+  }
+  async getCity(cityId) {
+    try {
+      const city = await city.findByPk(cityId);
+      return city;
+    } catch (error) {
+      console.log("Something went wrong");
+      throw { error };
     }
   }
 }
