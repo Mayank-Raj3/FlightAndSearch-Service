@@ -1,9 +1,10 @@
-// we need to have the acess of the modal
+// we need to have the access of the modal
 
 const { City } = require("../models/index");
 
-class CityRepositoty {
+class CityRepository {
   async createCity({ name }) {
+    //{name :"Delhi"} so here destructuring
     try {
       const city = await City.create({
         name,
@@ -51,4 +52,4 @@ class CityRepositoty {
   }
 }
 
-module.exports = CityRepositoty;
+module.exports = CityRepository;
