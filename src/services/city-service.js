@@ -17,6 +17,7 @@ class CityService {
   async deleteCity(cityId) {
     try {
       const response = await this.cityRepository.deleteCity(cityId);
+      return response;
     } catch (error) {
       console.log("Something Went Wrong!!");
       throw { error };
@@ -35,6 +36,7 @@ class CityService {
   async getCity(cityId) {
     try {
       const city = await this.cityRepository.getCity(cityId);
+      return city;
     } catch (error) {
       console.log("Something went wrong ");
       throw { error };
