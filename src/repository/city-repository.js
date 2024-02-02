@@ -1,5 +1,5 @@
 // we need to have the access of the modal
-
+const { Op } = require("sequelize");
 const { City } = require("../models/index");
 
 class CityRepository {
@@ -43,7 +43,17 @@ class CityRepository {
   }
   async getCity(cityId) {
     try {
-      const city = await city.findByPk(cityId);
+      const city = await City.findByPk(cityId);
+      return city;
+    } catch (error) {
+      console.log("Something went wrong");
+      throw { error };
+    }
+  }
+
+  async getAllCity() {
+    try {
+      const city = await City.findAll();
       return city;
     } catch (error) {
       console.log("Something went wrong");
