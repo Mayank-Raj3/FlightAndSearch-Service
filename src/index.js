@@ -11,7 +11,6 @@ const setupAndStartServer = async () => {
 
   app.listen(PORT, () => {
     console.log(`Server Started at ${PORT}`);
-    // console.log(process.env);
   });
 };
 
