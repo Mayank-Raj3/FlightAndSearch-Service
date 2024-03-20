@@ -67,6 +67,23 @@ class FlightRepository {
       throw { error };
     }
   }
+
+  async updateFlights(fligthId, data) {
+    try {
+      await Flights.update(data, {
+        where: {
+          id: fligthId,
+        },
+      });
+      return true;
+    } catch (error) {
+      throw new AppError(
+        "RepositoryError",
+        "Can't Update right Now ",
+        "There was some issue updating booking , pls try again late"
+      );
+    }
+  }
 }
 
 module.exports = FlightRepository;
