@@ -4,6 +4,14 @@
 
 The Flight Search API is a Node.js application built with Express.js. It allows users to manage data related to cities, airports, and flights, and to perform search operations for flights. The application is structured using the MVC (Model-View-Controller) pattern and follows a repository pattern for data access.
 
+## Design
+
+![enter image description here](https://i.ibb.co/QDdnzZ2/Screenshot-2024-09-11-at-10-50-27-AM.png)
+
+### ER diagram
+
+![enter image description here](https://i.ibb.co/vs7SjMy/Screenshot-2024-09-11-at-10-51-02-AM.png)
+
 ## Features
 
 - **City Management**: Create, read, update, and delete cities.
